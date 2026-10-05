@@ -8,9 +8,10 @@ with open("params.yaml", "r") as f:
 
 raw = np.load("data/raw/fashion_mnist.npz")
 
-x_train = raw["x_train"].astype("float32") / 255.0 * 0.98
+
+x_train = raw["x_train"].astype("float32") / 255.0 * 0.985
 y_train = raw["y_train"]
-x_test = raw["x_test"].astype("float32") / 255.0 * 0.98
+x_test = raw["x_test"].astype("float32") / 255.0 * 0.985
 y_test = raw["y_test"]
 
 x_train, x_val, y_train, y_val = train_test_split(
@@ -39,3 +40,5 @@ print("Train:", x_train.shape)
 print("Validation:", x_val.shape)
 print("Test:", x_test.shape)
 print("Pixel range:", x_train.min(), "to", x_train.max())
+
+# Temporary stash demonstration
